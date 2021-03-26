@@ -1,0 +1,212 @@
+{% extends 'login/login.html' %}
+{% block title %} Register {% endblock %}
+{% block style %}
+body {
+margin: 0;
+padding: 0;
+font-family: sans-serif;
+background: linear-gradient(to right, #b92b27, #1565c0)
+}
+
+.box {
+width: 500px;
+padding: 40px;
+position: absolute;
+top: 50%;
+left: 50%;
+background: #191919;
+;
+text-align: center;
+transition: 0.25s;
+margin-top: 100px
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+border: 0;
+background: none;
+display: block;
+margin: 20px auto;
+text-align: center;
+border: 2px solid #3498db;
+padding: 10px 10px;
+width: 250px;
+outline: none;
+color: white;
+border-radius: 24px;
+transition: 0.25s
+}
+
+.box h1 {
+color: white;
+text-transform: uppercase;
+font-weight: 500
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+width: 300px;
+border-color: #2ecc71
+}
+
+.box input[type="submit"] {
+border: 0;
+background: none;
+display: block;
+margin: 20px auto;
+text-align: center;
+border: 2px solid #2ecc71;
+padding: 14px 40px;
+outline: none;
+color: white;
+border-radius: 24px;
+transition: 0.25s;
+cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+background: #2ecc71
+}
+
+.forgot {
+text-decoration: underline
+}
+
+ul.social-network {
+list-style: none;
+display: inline;
+margin-left: 0 !important;
+padding: 0
+}
+
+ul.social-network li {
+display: inline;
+margin: 0 5px
+}
+
+.social-network a.icoFacebook:hover {
+background-color: #3B5998
+}
+
+.social-network a.icoTwitter:hover {
+background-color: #33ccff
+}
+
+.social-network a.icoGoogle:hover {
+background-color: #BD3518
+}
+
+.social-network a.icoFacebook:hover i,
+.social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i {
+color: #fff
+}
+
+a.socialIcon:hover,
+.socialHoverClass {
+color: #44BCDD
+}
+
+.social-circle li a {
+display: inline-block;
+position: relative;
+margin: 0 auto 0 auto;
+border-radius: 50%;
+text-align: center;
+width: 50px;
+height: 50px;
+font-size: 20px
+}
+
+.social-circle li i {
+margin: 0;
+line-height: 50px;
+text-align: center
+}
+
+.social-circle li a:hover i,
+.triggeredHover {
+transform: rotate(360deg);
+transition: all 0.2s
+}
+
+.social-circle i {
+color: #fff;
+transition: all 0.8s;
+transition: all 0.8s
+}
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Apps
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-group">
+                <div class="card text-dark bg-light mb-3" style="width: 18rem; background-color: darkgray;">
+                    <img src="{% static 'cal.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Calculaotr</h5>
+                        <p class="card-text">Evaluate your expression here .</p>
+                        <a href="/calculatorapp" class="btn btn-primary" style="display: block;">Goto Calculator</a>
+                    </div>
+                </div>
+                <div class="card text-dark bg-light mb-3" style="width: 18rem;">
+                    <img src="{% static 'todo.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">ToDo</h5>
+                        <p class="card-text">Stop remembering Things. Make your schudule  here </p>
+                        <a href="/todo" class="btn btn-primary" style="display: block;">ToDo</a>
+                    </div>
+                </div>
+                <div class="card text-dark bg-light mb-3" style="width: 18rem;">
+                    <img src="{% static 'vote.jpeg' %}" style="height: 48%;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Vote and see the Magic.</p>
+                        <a href="/votingapp" class="btn btn-primary" style="display: block;">Voting</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

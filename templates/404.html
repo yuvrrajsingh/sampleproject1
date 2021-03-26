@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} 404 Error Page{% endblock %}
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Page Not found</h1>
+  <p class="lead">Sorry, This page is missing or does not exists.</p>
+  <hr class="my-4">
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url '/' %}" role="button">Go to our Home Page</a>
+  </p>
+</div>
+{% endblock %}

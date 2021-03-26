@@ -1,0 +1,22 @@
+{% extends 'todo/index.html' %}
+{% load static %}
+{% block title %} Edit Tasks {% endblock %}
+{% block content %}
+<div class="container-fluid" style="background-color: lightgreen;">
+
+    <div class="row">
+
+        <div class="col-md-6" style="margin: 0 auto;">
+            <img src="{% static 'images.png' %}" class="img-fluid" style="display: block; width: -moz-available;">
+            <form method="POST" action="/todo/update/{{id}}">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Update Task" class="btn btn-primary"
+                       style="display: block; margin: 0 auto;">
+            </form>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
