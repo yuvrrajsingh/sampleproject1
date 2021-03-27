@@ -22,7 +22,7 @@ def index(request):
             'remember' : False
         }
         for i in s:
-            if username == i.username:
+            if username == i.username and password == i.password:
                 mydict['remember'] = True
                 break
 
